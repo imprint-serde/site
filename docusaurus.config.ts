@@ -15,7 +15,7 @@ const config: Config = {
   },
 
   // Set the production url of your site here
-  url: 'https://your-docusaurus-site.example.com',
+  url: 'https://imprintserde.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
@@ -43,13 +43,12 @@ const config: Config = {
       'classic',
       {
         docs: {
+          routeBasePath: '/',
           sidebarPath: './sidebars.ts',
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          editUrl: 'https://github.com/imprint-serde/site/tree/main',
         },
         blog: false,
+        pages: false,
         theme: {
           customCss: './src/css/custom.css',
         },
@@ -63,20 +62,16 @@ const config: Config = {
       disableSwitch: true,
       respectPrefersColorScheme: false
     },
-    // Replace with your project's social card
     image: 'img/imprint-opengraph.png',
     navbar: {
       title: 'Imprint Serde',
-      logo: {
-        alt: 'Imprint Serde Logo',
-        src: 'img/logo.svg',
-      },
+      logo: { alt: 'Imprint Serde Logo', src: 'img/logo.svg' },
       items: [
         {
           type: 'docSidebar',
           sidebarId: 'tutorialSidebar',
           position: 'left',
-          label: 'Tutorial',
+          label: 'Docs',
         },
         {
           href: "https://github.com/imprint-serde/imprint",
