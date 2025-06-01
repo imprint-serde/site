@@ -45,7 +45,7 @@ const config: Config = {
         docs: {
           routeBasePath: '/',
           sidebarPath: './sidebars.ts',
-          editUrl: 'https://github.com/imprint-serde/site/tree/main',
+          sidebarCollapsed: false,
         },
         blog: false,
         pages: false,
@@ -69,7 +69,7 @@ const config: Config = {
       items: [
         {
           type: 'docSidebar',
-          sidebarId: 'tutorialSidebar',
+          sidebarId: 'docsSidebar',
           position: 'left',
           label: 'Docs',
         },

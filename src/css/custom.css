@@ -31,3 +31,10 @@
   height: 24px;
   width: 24px;
 }
+
+.breadcrumbs__item .breadcrumbs__link > svg {
+  display: inline;
+  vertical-align: middle;
+  height: 1.5em;
+  width: 1.5em;
+}
