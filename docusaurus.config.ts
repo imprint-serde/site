@@ -5,8 +5,8 @@ import type * as Preset from '@docusaurus/preset-classic';
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
-  title: 'My Site',
-  tagline: 'Dinosaurs are cool',
+  title: 'Imprint Serde',
+  tagline: 'Serialization Format for Data Pipelines',
   favicon: 'img/favicon.ico',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
@@ -58,12 +58,17 @@ const config: Config = {
   ],
 
   themeConfig: {
+    colorMode: {
+      defaultMode: 'light',
+      disableSwitch: true,
+      respectPrefersColorScheme: false
+    },
     // Replace with your project's social card
-    image: 'img/docusaurus-social-card.jpg',
+    image: 'img/imprint-opengraph.png',
     navbar: {
-      title: 'My Site',
+      title: 'Imprint Serde',
       logo: {
-        alt: 'My Site Logo',
+        alt: 'Imprint Serde Logo',
         src: 'img/logo.svg',
       },
       items: [
@@ -74,60 +79,15 @@ const config: Config = {
           label: 'Tutorial',
         },
         {
-          href: 'https://github.com/facebook/docusaurus',
-          label: 'GitHub',
-          position: 'right',
+          href: "https://github.com/imprint-serde/imprint",
+          position: "right",
+          className: "header-github-link",
+          "aria-label": "GitHub repository",
         },
       ],
-    },
-    footer: {
-      style: 'dark',
-      links: [
-        {
-          title: 'Docs',
-          items: [
-            {
-              label: 'Tutorial',
-              to: '/docs/intro',
-            },
-          ],
-        },
-        {
-          title: 'Community',
-          items: [
-            {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-            },
-            {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
-            },
-            {
-              label: 'X',
-              href: 'https://x.com/docusaurus',
-            },
-          ],
-        },
-        {
-          title: 'More',
-          items: [
-            {
-              label: 'Blog',
-              to: '/blog',
-            },
-            {
-              label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
-            },
-          ],
-        },
-      ],
-      copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
     },
     prism: {
       theme: prismThemes.github,
-      darkTheme: prismThemes.dracula,
     },
   } satisfies Preset.ThemeConfig,
 };

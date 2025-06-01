@@ -30,3 +30,16 @@
   --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
+
+.header-github-link:hover {
+  opacity: 0.6;
+}
+
+.header-github-link:before {
+  background: url(/img/github-mark.svg);
+  background-size: contain;
+  content: "";
+  display: flex;
+  height: 24px;
+  width: 24px;
+}
