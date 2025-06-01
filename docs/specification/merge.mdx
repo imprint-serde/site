@@ -1,0 +1,27 @@
+---
+title: Merge Operator
+sidebar_position: 2
+---
+
+Merging two Imprint rows with compatible schemas (there are no fields with the
+same name and different types) can be done by sort-merging the field directories
+and conatenating the payloads, modifying the directory for trailing messages by
+incrementing the offset by the length of the payload of A:
+
+```
+new_payload = A.payload || B.payload
+new_directory = A.dir ∪ (B.dir offset+|A|)
+new_fieldcount = A.N + B.N
+```
+
+If the field directories are not disjoint, the directory will only include
+the directory entry for the first field. This means the order of composition 
+matters as the payload in the second record will be ignored (or, optionally,
+the second payload can be modified to remove the discarded value to save 
+space).
+
+The results of benchmarking a basic merge use case when compared to protobuf
+show that Imprint is able to merge records of increasingly large size in constant
+time while Protobuf degrades linearly with the size of the input records. In a
+simple benchmark, Imprint performs up to 76% better than protobuf at merging two
+records.
